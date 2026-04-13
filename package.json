@@ -1,0 +1,17 @@
+{
+  "name": "presentation-workspace",
+  "private": true,
+  "scripts": {
+    "list": "node scripts/slidev-run.mjs list",
+    "dev": "node scripts/slidev-run.mjs dev",
+    "build": "node scripts/slidev-run.mjs build",
+    "export": "node scripts/slidev-run.mjs export",
+    "pages:build": "node scripts/build-pages.mjs"
+  },
+  "devDependencies": {
+    "@slidev/cli": "latest",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "playwright-chromium": "latest"
+  }
+}

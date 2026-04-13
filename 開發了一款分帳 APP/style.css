@@ -1,0 +1,94 @@
+:root {
+  --slidev-theme-primary: #7dd3fc;
+}
+
+.slidev-layout {
+  font-size: 1.12rem;
+}
+
+h1 {
+  font-size: 2.4rem !important;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.35rem;
+  color: #cbd5e1;
+}
+
+.quote-box {
+  max-width: 850px;
+  margin: 1.5rem auto 0;
+  padding: 1.2rem 1.4rem;
+  border-left: 6px solid #38bdf8;
+  border-radius: 0.5rem;
+  background: rgba(2, 6, 23, 0.6);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.img-four-cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+
+/* 四欄：在欄寬內盡量大、保留長寬比（vh + 較寬鬆的 px 上限，避免被 220px 卡死） */
+.img-equal-sm {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: min(58vh, 580px);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(2, 6, 23, 0.45);
+}
+
+.img-two-cols {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: center;
+  justify-items: center;
+}
+
+/* 雙欄：高度用 vmin（跟視窗較短邊連動），比純 vh 更接近 16:9 投影片可用區域 */
+.img-equal-wide {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: min(38vmin, 380px);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(2, 6, 23, 0.45);
+}
+
+.slide-with-qr {
+  display: grid;
+  grid-template-columns: 1fr minmax(160px, 220px);
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.slide-with-qr__main {
+  min-width: 0;
+}
+
+.slide-with-qr__qr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-code-side {
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(2, 6, 23, 0.45);
+}
