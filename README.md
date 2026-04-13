@@ -1,74 +1,84 @@
-# Presentation Workspace
+# 念誠的 Presentation Workspace
 
-這個目錄現在採用「**多份簡報共用根目錄依賴**」的架構：
+這是一個用來管理多份簡報的工作區，核心工具是 [Slidev](https://sli.dev/)。
 
-- 每一份簡報放在自己的子資料夾（例如 `開發了一款分帳 APP/`）
-- 所有 `node_modules` 集中在根目錄
-- 統一在根目錄執行同一組指令，透過 `--deck` 指定要編譯哪一份簡報
+Slidev 是一個以 Markdown 為中心的簡報框架，適合工程與技術內容製作。你可以直接用 `slides.md` 撰寫投影片，搭配 `style.css` 自訂樣式，並透過同一套指令完成預覽、建置與匯出。
+
+這個專案的目標是：
+
+- 在同一個 workspace 中管理多份簡報
+- 共用根目錄依賴（`node_modules` 只安裝一次）
+- 用統一指令編譯指定的簡報
+- 支援將所有簡報自動部署到 GitHub Pages
 
 ---
 
-## 目錄結構建議
+## 專案架構
 
 ```text
 Presentation/
-├─ package.json              # 共用依賴與共用指令
-├─ node_modules/             # 只在根目錄
+├─ package.json                    # 共用依賴與指令入口
+├─ node_modules/                   # 根目錄統一安裝
 ├─ scripts/
-│  └─ slidev-run.mjs         # 共用執行器
-├─ 開發了一款分帳 APP/
+│  ├─ slidev-run.mjs               # 單份簡報的 dev/build/export
+│  └─ build-pages.mjs              # 打包所有簡報供 Pages 部署
+├─ .github/workflows/
+│  └─ deploy-pages.yml             # GitHub Actions 自動部署
+├─ 簡報A/
 │  ├─ slides.md
-│  ├─ style.css
-│  ├─ assets/
-│  └─ dist/                  # build 後輸出
-└─ 另一份簡報/
+│  ├─ style.css (可選)
+│  ├─ assets/   (可選)
+│  └─ dist/     (build 輸出)
+└─ 簡報B/
    ├─ slides.md
-   ├─ style.css
-   ├─ assets/
-   └─ dist/
+   ├─ style.css (可選)
+   ├─ assets/   (可選)
+   └─ dist/     (build 輸出)
 ```
+
+### 架構設計重點
+
+- 每個子資料夾只要有 `slides.md`，就會被視為一份可執行簡報。
+- 根目錄統一管理依賴，避免每份簡報重複安裝。
+- 指令透過 `--deck` 指定目標簡報，維持一致使用方式。
 
 ---
 
-## 第一次設定
+## 如何使用
 
-在根目錄執行一次安裝：
+### 1) 初次安裝
+
+在專案根目錄執行：
 
 ```bash
 npm install
 ```
 
-> 不需要在每個簡報資料夾重複安裝。
-
----
-
-## 指令用法（都在根目錄執行）
-
-先查看有哪些簡報可用：
+### 2) 查看可用簡報
 
 ```bash
 npm run list
 ```
 
-啟動某份簡報的開發模式：
+### 3) 開發預覽指定簡報
 
 ```bash
 npm run dev -- --deck="開發了一款分帳 APP"
 ```
 
-建置某份簡報為靜態網站（輸出到該簡報資料夾內的 `dist/`）：
+### 4) 建置指定簡報（輸出 HTML）
 
 ```bash
 npm run build -- --deck="開發了一款分帳 APP"
 ```
 
-匯出某份簡報為 PDF（輸出到該簡報資料夾內的 `slides-export.pdf`）：
+### 5) 匯出指定簡報（輸出 PDF）
 
 ```bash
 npm run export -- --deck="開發了一款分帳 APP"
 ```
 
-也可用位置參數（不使用 `--deck`）：
+你也可以使用位置參數：
 
 ```bash
 npm run build -- "開發了一款分帳 APP"
@@ -78,42 +88,28 @@ npm run build -- "開發了一款分帳 APP"
 
 ## 新增一份簡報
 
-1. 在根目錄新增資料夾，例如 `我的新簡報/`
-2. 放入至少以下檔案：
-   - `slides.md`
-   - `style.css`（可選）
-   - `assets/`（可選）
-3. 回到根目錄執行：
-   - `npm run list`（確認被偵測到）
-   - `npm run dev -- --deck="我的新簡報"`
+1. 在根目錄新增一個資料夾（例如 `我的新簡報/`）
+2. 建立 `slides.md`（必要）
+3. 視需求加入 `style.css`、`assets/`
+4. 回根目錄執行 `npm run list` 確認有被偵測到
 
 ---
 
-## 從舊架構遷移（每份簡報各自 node_modules）
+## GitHub Pages 自動部署
 
-如果你之前在簡報子資料夾內已經有 `package.json` / `node_modules`，可逐步整理為：
+本專案已包含 `.github/workflows/deploy-pages.yml`，推送到 `main` 後會自動：
 
-1. 保留內容檔：`slides.md`、`style.css`、`assets/`
-2. 改用根目錄的 `package.json` 與共用指令
-3. 確認新流程正常後，再刪除子資料夾舊的 `node_modules` 與 `package.json`
-
----
-
-## GitHub Pages 自動部署（所有簡報）
-
-已內建 workflow：`.github/workflows/deploy-pages.yml`，會在 `main` 分支推送後自動：
-
-1. 安裝根目錄依賴
-2. 掃描所有包含 `slides.md` 的子資料夾
-3. 將每份簡報 build 到 Pages 輸出（`.pages-dist/<簡報資料夾>/`）
-4. 產生首頁 `index.html`（列出所有簡報連結）
+1. 安裝依賴
+2. 掃描所有簡報資料夾（含 `slides.md`）
+3. Build 全部簡報到 `.pages-dist/<簡報名稱>/`
+4. 產生首頁索引
 5. 部署到 GitHub Pages
 
-你需要在 GitHub 倉庫設定中確認：
+請在 GitHub Repository 設定：
 
-- `Settings` → `Pages` → `Source` 設為 `GitHub Actions`
+- `Settings` → `Pages` → `Source` 選擇 `GitHub Actions`
 
-本機可先模擬 Pages 打包：
+本機可先測試 Pages 打包：
 
 ```bash
 npm run pages:build
@@ -121,4 +117,4 @@ npm run pages:build
 
 ---
 
-更多語法與功能可參考 [Slidev 官方文件](https://sli.dev/)。
+更多用法可參考 [Slidev 官方文件](https://sli.dev/)。
