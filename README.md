@@ -86,6 +86,31 @@ npm run build -- "開發了一款分帳 APP"
 
 ---
 
+## 本地預覽
+
+如果你想用「靜態網站」方式預覽 build 後的簡報，可以用以下方式：
+
+### 使用 npm 套件啟動靜態伺服器
+
+1. 先一次 build 全部簡報（GitHub Pages 輸出）：
+
+```bash
+npm run pages:build
+```
+
+2. 進入輸出資料夾並用 `serve` 啟動：
+
+```bash
+cd "pages/dist"
+npx serve .
+```
+
+3. 依終端機顯示的網址開啟瀏覽器（預設常見為 `http://localhost:3000`）。
+
+> 補充：若你只是要邊改邊看，仍建議使用 `npm run dev -- --deck="開發了一款分帳 APP"`，可享有熱更新。
+
+---
+
 ## 新增一份簡報
 
 1. 在根目錄新增一個資料夾（例如 `我的新簡報/`）
@@ -101,7 +126,7 @@ npm run build -- "開發了一款分帳 APP"
 
 1. 安裝依賴
 2. 掃描所有簡報資料夾（含 `slides.md`）
-3. Build 全部簡報到 `.pages-dist/<簡報名稱>/`
+3. Build 全部簡報到 `pages/dist/<簡報名稱>/`
 4. 產生首頁索引
 5. 部署到 GitHub Pages
 

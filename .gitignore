@@ -4,7 +4,6 @@ node_modules/
 
 # Build outputs
 **/dist/
-.pages-dist/
 **/slides-export.pdf
 
 # OS / editor files

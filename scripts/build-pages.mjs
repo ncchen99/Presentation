@@ -5,7 +5,7 @@ import { join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const workspaceRoot = process.cwd();
-const outputRoot = resolve(workspaceRoot, ".pages-dist");
+const outputRoot = resolve(workspaceRoot, "pages", "dist");
 const decks = findDecks(workspaceRoot);
 const siteBase = resolveSiteBase(process.env.PAGES_SITE_BASE);
 
