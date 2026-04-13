@@ -50,7 +50,7 @@ function findDecks(root) {
 
 function createIndexHtml(decksList) {
   const links = decksList
-    .map((deck) => `<li><a href="${encodeURI(deck.name)}/">${escapeHtml(deck.name)}</a></li>`)
+    .map((deck) => `<li><a href="./${encodeURIComponent(deck.name)}/">${escapeHtml(deck.name)}</a></li>`)
     .join("\n");
 
   return `<!DOCTYPE html>
@@ -58,6 +58,7 @@ function createIndexHtml(decksList) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="./" />
   <title>Presentation Index</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 40px auto; max-width: 720px; padding: 0 16px; line-height: 1.6; }
