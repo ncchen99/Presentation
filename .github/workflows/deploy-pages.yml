@@ -30,6 +30,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Resolve Pages base path
+        run: |
+          OWNER="${GITHUB_REPOSITORY_OWNER}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ "$REPO" = "${OWNER}.github.io" ]; then
+            echo "PAGES_SITE_BASE=/" >> "$GITHUB_ENV"
+          else
+            echo "PAGES_SITE_BASE=/$REPO/" >> "$GITHUB_ENV"
+          fi
+
       - name: Build all decks for Pages
         run: npm run pages:build
 

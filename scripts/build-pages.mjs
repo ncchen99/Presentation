@@ -7,6 +7,7 @@ import { spawnSync } from "node:child_process";
 const workspaceRoot = process.cwd();
 const outputRoot = resolve(workspaceRoot, ".pages-dist");
 const decks = findDecks(workspaceRoot);
+const siteBase = resolveSiteBase(process.env.PAGES_SITE_BASE);
 
 if (decks.length === 0) {
   console.error("找不到任何簡報。請先建立包含 slides.md 的子資料夾。");
@@ -20,11 +21,13 @@ writeFileSync(join(outputRoot, ".nojekyll"), "");
 for (const deck of decks) {
   const entry = join(deck.path, "slides.md");
   const outDir = join(outputRoot, deck.name);
+  const deckBase = `${siteBase}${encodeURIComponent(deck.name)}/`;
 
   console.log(`\nBuilding: ${deck.name}`);
+  console.log(`Base URL: ${deckBase}`);
   const result = spawnSync(
     "npx",
-    ["slidev", "build", entry, "--base", "./", "--out", outDir],
+    ["slidev", "build", entry, "--base", deckBase, "--out", outDir],
     { stdio: "inherit", cwd: workspaceRoot, shell: process.platform === "win32" },
   );
 
@@ -68,6 +71,11 @@ function createIndexHtml(decksList) {
   </style>
 </head>
 <body>
+  <script>
+    if (!window.location.pathname.endsWith("/")) {
+      window.location.replace(window.location.pathname + "/" + window.location.search + window.location.hash);
+    }
+  </script>
   <h1>簡報列表</h1>
   <p>以下為目前可瀏覽的簡報：</p>
   <ul>
@@ -85,4 +93,15 @@ function escapeHtml(input) {
     .replaceAll(">", "&gt;")
     .replaceAll("\"", "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function resolveSiteBase(rawBase) {
+  if (!rawBase) return "/";
+
+  let base = rawBase.trim();
+  if (!base) return "/";
+
+  if (!base.startsWith("/")) base = `/${base}`;
+  if (!base.endsWith("/")) base = `${base}/`;
+  return base;
 }
