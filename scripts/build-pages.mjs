@@ -53,7 +53,17 @@ function findDecks(root) {
 
 function createIndexHtml(decksList) {
   const links = decksList
-    .map((deck) => `<li><a href="./${encodeURIComponent(deck.name)}/">${escapeHtml(deck.name)}</a></li>`)
+    .map(
+      (deck) => `      <li>
+        <a
+          href="./${encodeURIComponent(deck.name)}/"
+          class="group flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900/70 px-5 py-4 transition hover:border-cyan-400/60 hover:bg-slate-800"
+        >
+          <span class="text-base font-medium text-slate-100 group-hover:text-cyan-300">${escapeHtml(deck.name)}</span>
+          <span class="text-sm text-slate-400 group-hover:text-cyan-200">進入簡報 →</span>
+        </a>
+      </li>`,
+    )
     .join("\n");
 
   return `<!DOCTYPE html>
@@ -62,25 +72,29 @@ function createIndexHtml(decksList) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <base href="./" />
-  <title>Presentation Index</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 40px auto; max-width: 720px; padding: 0 16px; line-height: 1.6; }
-    h1 { margin-bottom: 8px; }
-    ul { padding-left: 20px; }
-    li { margin: 8px 0; }
-  </style>
+  <title>簡報列表</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
   <script>
     if (!window.location.pathname.endsWith("/")) {
       window.location.replace(window.location.pathname + "/" + window.location.search + window.location.hash);
     }
   </script>
-  <h1>簡報列表</h1>
-  <p>以下為目前可瀏覽的簡報：</p>
-  <ul>
+  <main class="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-6 py-12 sm:px-8">
+    <div class="mb-10">
+      <p class="mb-3 inline-flex rounded-full border border-cyan-500/40 bg-cyan-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-cyan-300">
+        Presentation Workspace
+      </p>
+      <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">簡報列表</h1>
+      <p class="mt-3 text-sm text-slate-400 sm:text-base">以下是目前可瀏覽的所有簡報，點選即可開啟。</p>
+    </div>
+    <section class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5 shadow-2xl shadow-slate-950/40 sm:p-6">
+      <ul class="space-y-3">
 ${links}
-  </ul>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
 `;
