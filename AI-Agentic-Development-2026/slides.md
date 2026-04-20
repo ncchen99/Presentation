@@ -422,7 +422,7 @@ transition: fade
 ---
 
 <a href="https://claude.ai/share/a813a3af-823f-4b3a-83e4-022d37dddbd8" target="_blank">
-  <img src="/assets/1.3.png" class="rounded-lg shadow-xl object-contain"/>
+  <img src="./assets/1.3.png" class="rounded-lg shadow-xl object-contain"/>
 </a>
 
 ---
@@ -1094,27 +1094,26 @@ transition: fade
 <div class="text-center">
 
 <div class="text-4xl font-black mb-6" style="background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-  開始你的 Vibe Coding 之旅
+  希望大家所想皆成真！
 </div>
 
 <div class="text-lg text-gray-400 max-w-xl mx-auto mb-8 italic">
-  「沒有任何時間比現在更早開始。即使不是完美的方法，我們也必須努力應用在專案上，畢竟改善世界才是專案的目標。」
+  很高興有機會分享，期待與各位交流！
 </div>
 
-<div class="flex gap-4 justify-center flex-wrap">
-  <div class="px-4 py-2 rounded-full text-sm" style="background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.4); color: #a5b4fc">
-    📁 建立資料夾結構
+<div class="flex gap-12 justify-center mb-8">
+  <div class="text-center">
+    <img src="./assets/fb.png" class="h-32 w-32 rounded-lg shadow-lg mb-2" />
+    <div class="text-sm font-bold text-blue-400">Facebook</div>
   </div>
-  <div class="px-4 py-2 rounded-full text-sm" style="background: rgba(139,92,246,0.2); border: 1px solid rgba(139,92,246,0.4); color: #c4b5fd">
-    📝 寫下第一份需求
-  </div>
-  <div class="px-4 py-2 rounded-full text-sm" style="background: rgba(236,72,153,0.2); border: 1px solid rgba(236,72,153,0.4); color: #f9a8d4">
-    🤖 讓 AI 開始工作
+  <div class="text-center">
+    <img src="./assets/ig.png" class="h-32 w-32 rounded-lg shadow-lg mb-2" />
+    <div class="text-sm font-bold text-pink-400">Instagram</div>
   </div>
 </div>
 
 <div class="mt-8 text-gray-600 text-xs">
-  2026 Vibe Coding 實戰操作指南 · 適用上半年
+  2026 AI Agentic Development 實戰操作指南 · 適用上半年
 </div>
 
 </div>
