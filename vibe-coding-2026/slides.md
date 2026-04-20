@@ -154,7 +154,7 @@ transition: fade
 <div class="text-center">
   <div class="text-5xl mb-4">💻</div>
   <div class="text-xl font-bold text-gray-400 mb-2">過去</div>
-  <div class="text-2xl font-black text-gray-300">代碼執行者</div>
+  <div class="text-2xl font-black text-gray-300">代碼農夫</div>
   <div class="mt-3 text-sm text-gray-500">專注於「怎麼寫」</div>
   <div class="text-sm text-gray-500">逐行撰寫代碼</div>
   <div class="text-sm text-gray-500">手動管理所有細節</div>
@@ -202,46 +202,38 @@ transition: slide-up
 <div class="rounded-xl p-4 text-center" style="background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.4)">
   <div class="text-2xl mb-2">⚙️</div>
   <div class="text-xs text-violet-400 font-bold mb-1">階段二</div>
-  <div class="text-sm font-semibold text-gray-200">技術選型</div>
-</div>
-</v-click>
-
-<v-click>
-<div class="rounded-xl p-4 text-center" style="background: rgba(236,72,153,0.15); border: 1px solid rgba(236,72,153,0.4)">
-  <div class="text-2xl mb-2">🏗️</div>
-  <div class="text-xs text-pink-400 font-bold mb-1">階段三</div>
-  <div class="text-sm font-semibold text-gray-200">系統架構</div>
+  <div class="text-sm font-semibold text-gray-200">技術 + 系統架構</div>
 </div>
 </v-click>
 
 <v-click>
 <div class="rounded-xl p-4 text-center" style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4)">
   <div class="text-2xl mb-2">🎨</div>
-  <div class="text-xs text-amber-400 font-bold mb-1">階段四</div>
-  <div class="text-sm font-semibold text-gray-200">設計稿生成</div>
+  <div class="text-xs text-amber-400 font-bold mb-1">階段三</div>
+  <div class="text-sm font-semibold text-gray-200">Wireframe + 設計稿</div>
 </div>
 </v-click>
 
 <v-click>
 <div class="rounded-xl p-4 text-center" style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4)">
   <div class="text-2xl mb-2">🔗</div>
-  <div class="text-xs text-emerald-400 font-bold mb-1">階段五</div>
-  <div class="text-sm font-semibold text-gray-200">設計整合</div>
+  <div class="text-xs text-emerald-400 font-bold mb-1">階段四</div>
+  <div class="text-sm font-semibold text-gray-200">設計導出</div>
 </div>
 </v-click>
 
 <v-click>
 <div class="rounded-xl p-4 text-center" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4)">
   <div class="text-2xl mb-2">🤖</div>
-  <div class="text-xs text-blue-400 font-bold mb-1">階段六</div>
+  <div class="text-xs text-blue-400 font-bold mb-1">階段五</div>
   <div class="text-sm font-semibold text-gray-200">AI 代理開發</div>
 </div>
 </v-click>
 
 <v-click>
 <div class="rounded-xl p-4 text-center" style="background: rgba(20,184,166,0.15); border: 1px solid rgba(20,184,166,0.4)">
-  <div class="text-2xl mb-2">📋</div>
-  <div class="text-xs text-teal-400 font-bold mb-1">階段七</div>
+  <div class="text-2xl mb-2">🚀</div>
+  <div class="text-xs text-teal-400 font-bold mb-1">階段六</div>
   <div class="text-sm font-semibold text-gray-200">部署應用程式</div>
 </div>
 </v-click>
@@ -268,17 +260,18 @@ transition: fade
 
 <div class="mt-4">
 
-```bash {all|1-6|7-11|12-14}
+```bash {all|1-6|7-12|13-14}
 my-project/
 ├── specs/                    # 所有規格文件放這裡
 │   ├── requirements.md       # 需求文件（做什麼＋驗收標準）
-│   ├── SPEC.md               # 技術規格（數據模型、API 設計）
+│   ├── SPEC.md               # 技術規格（技術選型、API 設計、元件清單）
 │   ├── AGENTS.md             # AI 代理人角色指令與行為約束
 │   └── tasks.md              # AI 規劃後產生的任務清單（待確認）
 ├── designs/                  # 所有設計資產放這裡
 │   ├── DESIGN.md             # 設計系統規格（色彩、字體、間距）
-│   ├── wireframes/           # 線框圖描述文字檔
-│   └── stitches/             # Stitches 導出的 HTML/CSS/JS 檔案
+│   ├── user-flow.md          # 使用者操作流程與頁面跳轉邏輯
+│   ├── wireframes/           # 各頁面 Wireframe 描述（每頁一個 .md 檔）
+│   └── stitches/             # Stitch 導出的 HTML/CSS/JS 視覺參考
 ├── figma/                    # Figma 相關資源（專業流程使用）
 └── src/                      # 源代碼
 ```
@@ -389,12 +382,6 @@ transition: fade
 </v-click>
 
 ---
-layout: center
----
-
-<img src="/assets/1.3.png" class="rounded-lg shadow-xl h-4/5 object-contain" />
-
----
 layout: section
 transition: slide-left
 ---
@@ -402,8 +389,8 @@ transition: slide-left
 <div class="text-center">
   <div class="text-5xl mb-3">⚙️</div>
   <div class="text-xl text-violet-400 font-semibold mb-1">第二階段</div>
-  <div class="text-4xl font-black text-gray-100">技術選型</div>
-  <div class="text-lg text-gray-400 mt-3">基於需求文件的數據導向決策</div>
+  <div class="text-4xl font-black text-gray-100">技術選型與系統架構</div>
+  <div class="text-lg text-gray-400 mt-3">一個 Prompt 同時搞定選型與架構規劃</div>
 </div>
 
 ---
@@ -411,130 +398,32 @@ layout: default
 transition: fade
 ---
 
-# 後端方案參考對照
+# 系統規格文件 Prompt
 
-<div class="mt-4">
+```md {all|1|3-7|8-14}
+請你閱讀 specs/requirements.md，幫我完成以下兩件事，並輸出至 specs/SPEC.md：
 
-| 方案 | 特點 | 2026 預估月費（10萬用戶） | 適用場景 |
-|------|------|:---:|------|
-| **Supabase** (PostgreSQL) | 關係型、可自託管、定額收費 | $25–$90 | SaaS、Web 應用、複雜關係數據 |
-| **Firebase** (NoSQL) | 文檔型、Google 生態整合、按操作收費 | $500–$2,000 | 行動 App、快速原型、即時同步 |
-| **Custom** (K8s/Go) | 完全控制、高維護成本 | $1,500+ | 企業核心系統、極高性能需求 |
+【一】技術選型
+- 推薦最適合的技術架構（前端框架、後端方案、資料庫、第三方服務）
+- 至少比較兩個後端方案，說明優缺點與取捨
+- 特別考量：開發速度、維護成本、學習曲線
 
-</div>
+【二】系統架構規劃
+- 整體系統架構（以 Mermaid 圖或文字描述）
+- 前後端服務區塊劃分
+- 主要資料流：前端 ↔ API ↔ 資料庫
+- 外部服務清單與串接方式
 
-<v-click>
-<div class="mt-5 p-4 rounded-xl" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3)">
-  <div class="text-emerald-400 font-bold text-sm mb-1">💡 2026 年建議</div>
-  <div class="text-gray-300 text-sm">
-    在高頻操作的應用中，Supabase 通常比 Firebase <span class="text-emerald-300 font-bold">便宜 80%–95%</span>。<br>
-    初學者與小型專案優先考慮 <span class="text-emerald-300 font-bold">Supabase</span>。
-  </div>
-</div>
-</v-click>
-
----
-layout: default
-transition: fade
----
-
-# 技術選型的 AI Prompt 範本
-
-```md {all|2|3-8}
-請根據 specs/requirements.md 中的需求，推薦最適合的技術架構。
-請說明：
-1. 前端框架選擇及原因
-2. 後端方案選擇及原因（含至少兩個方案的比較）
-3. 資料庫選型及原因
-4. 第三方服務建議（身份驗證、儲存等）
-5. 每個選擇的優缺點與取捨
-
-請特別考量：開發速度、維護成本、團隊學習曲線。
+SPEC.md 需包含：技術堆疊表、API 路由設計、資料庫 Schema 草稿。
 ```
-
-<v-click>
-<div class="mt-4 p-3 rounded-lg text-sm" style="background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.3)">
-  📌 確認技術選型後，請 AI 根據 <code>requirements.md</code> 擴充產生 <code>specs/SPEC.md</code>，
-  內容包含技術堆疊、API 路由設計、資料庫 Schema 草稿。
-</div>
-</v-click>
-
----
-layout: section
-transition: slide-left
----
-
-<div class="text-center">
-  <div class="text-5xl mb-3">🏗️</div>
-  <div class="text-xl text-pink-400 font-semibold mb-1">第三階段</div>
-  <div class="text-4xl font-black text-gray-100">系統架構與介面規劃</div>
-  <div class="text-lg text-gray-400 mt-3">建立系統骨架</div>
-</div>
-
 ---
 layout: default
 transition: fade
 ---
 
-# 架構規模選型指引
-
-<div class="grid grid-cols-3 gap-4 mt-4">
-
-<v-click>
-<div class="rounded-xl p-4" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3)">
-  <div class="text-emerald-400 font-bold mb-2">🌱 輕量 / 敏捷</div>
-  <div class="text-sm text-gray-300 mb-3">前端直接接 BaaS</div>
-  <div class="text-xs bg-gray-800 rounded px-2 py-1 font-mono text-emerald-300">React/Vue + Supabase</div>
-</div>
-</v-click>
-
-<v-click>
-<div class="rounded-xl p-4" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3)">
-  <div class="text-indigo-400 font-bold mb-2">🏢 中型專案</div>
-  <div class="text-sm text-gray-300 mb-3">有輕量後端</div>
-  <div class="text-xs bg-gray-800 rounded px-2 py-1 font-mono text-indigo-300">Next.js + Edge Functions</div>
-</div>
-</v-click>
-
-<v-click>
-<div class="rounded-xl p-4" style="background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.3)">
-  <div class="text-pink-400 font-bold mb-2">🏭 企業系統</div>
-  <div class="text-sm text-gray-300 mb-3">完整微服務</div>
-  <div class="text-xs bg-gray-800 rounded px-2 py-1 font-mono text-pink-300">K8s + Kafka + 自定義服務</div>
-</div>
-</v-click>
-
-</div>
-
-<v-click>
-<div class="mt-5">
-
-### 前端元件拆分：原子設計（Atomic Design）
-
-<div class="flex gap-2 mt-3 text-sm">
-  <div class="flex-1 text-center rounded-lg py-2 px-3" style="background: rgba(99,102,241,0.15)">
-    <div class="text-indigo-400 font-bold text-xs">Atoms</div>
-    <div class="text-gray-400 text-xs mt-1">Button, Input, Badge</div>
-  </div>
-  <div class="text-gray-500 self-center">→</div>
-  <div class="flex-1 text-center rounded-lg py-2 px-3" style="background: rgba(139,92,246,0.15)">
-    <div class="text-purple-400 font-bold text-xs">Molecules</div>
-    <div class="text-gray-400 text-xs mt-1">SearchBar, UserCard</div>
-  </div>
-  <div class="text-gray-500 self-center">→</div>
-  <div class="flex-1 text-center rounded-lg py-2 px-3" style="background: rgba(168,85,247,0.15)">
-    <div class="text-violet-400 font-bold text-xs">Organisms</div>
-    <div class="text-gray-400 text-xs mt-1">Header, Sidebar</div>
-  </div>
-  <div class="text-gray-500 self-center">→</div>
-  <div class="flex-1 text-center rounded-lg py-2 px-3" style="background: rgba(236,72,153,0.15)">
-    <div class="text-pink-400 font-bold text-xs">Pages</div>
-    <div class="text-gray-400 text-xs mt-1">路由 + 頁面元件</div>
-  </div>
-</div>
-
-</div>
-</v-click>
+<a href="https://claude.ai/share/a813a3af-823f-4b3a-83e4-022d37dddbd8" target="_blank">
+  <img src="/assets/1.3.png" class="rounded-lg shadow-xl object-contain"/>
+</a>
 
 ---
 layout: section
@@ -543,9 +432,9 @@ transition: slide-left
 
 <div class="text-center">
   <div class="text-5xl mb-3">🎨</div>
-  <div class="text-xl text-amber-400 font-semibold mb-1">第四階段</div>
-  <div class="text-4xl font-black text-gray-100">前端頁面與設計稿生成</div>
-  <div class="text-lg text-gray-400 mt-3">工具：Google Stitch</div>
+  <div class="text-xl text-amber-400 font-semibold mb-1">第三階段</div>
+  <div class="text-4xl font-black text-gray-100">Wireframe 與設計稿</div>
+  <div class="text-lg text-gray-400 mt-3">先規劃骨架，再生成視覺</div>
 </div>
 
 ---
@@ -553,117 +442,239 @@ layout: default
 transition: fade
 ---
 
-# Google Stitch 四種模式
+# 介面規劃流程
 
-<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="flex items-center justify-between mt-6 gap-2">
 
-<v-click>
-<div class="rounded-xl p-4" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3)">
-  <div class="flex items-center gap-2 mb-2">
-    <div class="text-xl">🧠</div>
-    <div class="font-bold text-indigo-300">Thinking</div>
-  </div>
-  <div class="text-xs text-gray-400">底層：Gemini Pro</div>
-  <div class="text-sm text-gray-300 mt-1">追求精細排版、複雜頁面</div>
-</div>
-</v-click>
-
-<v-click>
-<div class="rounded-xl p-4" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3)">
-  <div class="flex items-center gap-2 mb-2">
-    <div class="text-xl">⚡</div>
-    <div class="font-bold text-amber-300">3 Flash</div>
-  </div>
-  <div class="text-xs text-gray-400">底層：Gemini Flash</div>
-  <div class="text-sm text-gray-300 mt-1">追求速度、快速原型</div>
-</div>
-</v-click>
-
-<v-click>
-<div class="rounded-xl p-4" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3)">
-  <div class="flex items-center gap-2 mb-2">
-    <div class="text-xl">🖼️</div>
-    <div class="font-bold text-emerald-300">Redesign</div>
-  </div>
-  <div class="text-xs text-gray-400">圖像反向工程</div>
-  <div class="text-sm text-gray-300 mt-1">上傳設計圖仿照風格</div>
-</div>
-</v-click>
-
-<v-click>
-<div class="rounded-xl p-4" style="background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.3)">
-  <div class="flex items-center gap-2 mb-2">
-    <div class="text-xl">💡</div>
-    <div class="font-bold text-pink-300">Ideate</div>
-  </div>
-  <div class="text-xs text-gray-400">解決方案導向</div>
-  <div class="text-sm text-gray-300 mt-1">有問題、尚未有視覺概念時</div>
-</div>
-</v-click>
-
+<div class="flex-1 rounded-xl p-4 text-center" style="background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.4)">
+  <div class="text-3xl mb-2">📄</div>
+  <div class="text-sm font-bold text-indigo-300">Step 1</div>
+  <div class="text-xs text-gray-400 mt-1">Wireframe<br>各頁面版面與元件</div>
 </div>
 
-<v-click>
-<div class="mt-4 p-3 rounded-lg" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3)">
-  <div class="text-amber-400 font-bold text-sm">⭐ 鎖定主視圖策略</div>
-  <div class="text-gray-300 text-sm mt-1">
-    只需生成 <strong>1–3 個核心頁面</strong>確立設計語言，其餘頁面由 AI 代碼代理人延展。<br>
-    <span class="text-gray-400 text-xs">少量高質量 > 大量不一致</span>
-  </div>
+<div class="text-gray-600 text-2xl">→</div>
+
+<div class="flex-1 rounded-xl p-4 text-center" style="background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.4)">
+  <div class="text-3xl mb-2">🗺️</div>
+  <div class="text-sm font-bold text-purple-300">Step 2</div>
+  <div class="text-xs text-gray-400 mt-1">User Flow<br>操作流程與跳轉邏輯</div>
 </div>
-</v-click>
+
+<div class="text-gray-600 text-2xl">→</div>
+
+<div class="flex-1 rounded-xl p-4 text-center" style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4)">
+  <div class="text-3xl mb-2">✨</div>
+  <div class="text-sm font-bold text-amber-300">Step 3</div>
+  <div class="text-xs text-gray-400 mt-1">挑 1–2 個關鍵頁面<br>交給 Stitch 生成</div>
+</div>
+
+<div class="text-gray-600 text-2xl">→</div>
+
+<div class="flex-1 rounded-xl p-4 text-center" style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4)">
+  <div class="text-3xl mb-2">🔩</div>
+  <div class="text-sm font-bold text-emerald-300">Step 4</div>
+  <div class="text-xs text-gray-400 mt-1">補充 SPEC.md<br>元件拆解（Atomic Design）</div>
+</div>
+
+</div>
 
 ---
 layout: default
 transition: fade
 ---
 
-# 從 Dribbble 到 Stitch 的工作流
+# Step 1 — Wireframe Prompt
 
-<div class="mt-2 text-gray-400 text-sm mb-4">方案 B：指定設計風格生成（推薦）</div>
+```md
+請你閱讀 specs/requirements.md 和 specs/SPEC.md，
+為每一個頁面撰寫 Wireframe 描述，每頁一個 .md 檔案，儲存至 designs/wireframes/。
 
-<div class="grid grid-cols-3 gap-3">
+每個頁面描述需包含：
+1. 頁面用途與使用者情境
+2. 整體版面配置（Header / 主內容區 / Sidebar 等空間關係）
+3. 每個區塊的功能說明
+4. 頁面上所有互動元件（按鈕、表單、連結等）及其行為
+5. 空白狀態 / 載入中 / 錯誤狀態的處理方式
+
+格式：使用條列式描述版面的空間關係，不需要視覺稿。
+目的是讓後續的 AI 代碼代理人能依此推論出元件需求。
+```
+
+---
+layout: default
+transition: fade
+---
+
+# Wireframe 範例（Dashboard 頁面）
+
+<div class="text-xs text-gray-500 mb-2">📄 <code>designs/wireframes/example-dashboard.md</code></div>
+
+```
+┌─────────────────────────────────────────────────────┐
+│  [Logo]   [Nav: 首頁 / 歷史 / 設定]      [用戶頭像]     │  ← Header（固定頂部）
+├──────────┬──────────────────────────────────────────┤
+│          │  歡迎回來，{用戶名稱}                       │
+│ Sidebar  │  ─────────────────────────────────────── │
+│          │  [統計卡片 1]  [統計卡片 2]  [統計卡片 3]    │
+│  [快捷    │                                          │
+│   功能]   │  ─── 最近活動 ─────────────────────────── │
+│          │  [活動項目 1]  時間戳 + 操作描述 + 狀態      │
+│          │  [活動項目 2]                             │
+│          │  [載入更多] 按鈕                           │
+└──────────┴──────────────────────────────────────────┘
+```
+
+<div class="grid grid-cols-3 gap-2 mt-2 text-xs">
+  <div class="p-2 rounded" style="background: rgba(99,102,241,0.1)">📌 載入中 → Skeleton 動畫</div>
+  <div class="p-2 rounded" style="background: rgba(99,102,241,0.1)">📌 空白態 → 引導圖示 + CTA</div>
+  <div class="p-2 rounded" style="background: rgba(99,102,241,0.1)">📌 錯誤 → 點擊重試</div>
+</div>
+
+---
+layout: default
+transition: fade
+---
+
+# Step 2 — User Flow Prompt
+
+```md
+請你閱讀 specs/requirements.md 和 designs/wireframes/，
+為這個產品撰寫完整的使用者操作流程，儲存至 designs/user-flow.md。
+
+文件需包含：
+1. 主要使用者旅程（Happy Path）— 每個功能模塊一段
+2. 每個步驟：使用者操作 → 系統回應
+3. 分支情境：成功 / 失敗 / 邊界情況
+4. 若需求文件未涵蓋的情境，請根據現有規則合理推論，並以 ⚠️ 標記
+
+格式：優先使用 Mermaid flowchart 呈現主流程，
+每個主功能獨立一個段落，段落下附文字補充說明。
+```
+
+---
+layout: default
+transition: fade
+---
+
+# User Flow 範例（新用戶註冊）
+
+<div class="text-xs text-gray-500 mb-3">📄 <code>designs/user-flow.md</code></div>
+
+<div class="transform scale-90 -origin-top">
+
+```mermaid
+flowchart LR
+    A([用戶進入網站]) --> B{已登入？}
+    B -- 否 --> C[Landing Page]
+    B -- 是 --> D[Dashboard]
+    C --> E[點擊「立即開始」]
+    E --> F[填寫 Email + 密碼]
+    F --> G{驗證通過？}
+    G -- 否 --> H[顯示錯誤提示] --> F
+    G -- 是 --> I[發送驗證信]
+    I --> J[點擊驗證連結]
+    J --> K[填寫個資]
+    K --> D
+```
+
+</div>
+
+---
+layout: default
+transition: fade
+---
+
+# Step 3 — Google Stitch 生成關鍵頁面
+
+<div class="mb-3 p-3 rounded-lg text-sm" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3)">
+  <span class="text-amber-400 font-bold">⭐ 策略：</span>
+  <span class="text-gray-300">只挑元件最多、最複雜的 1–2 個頁面生成。其餘頁面由 AI 代碼代理人依設計語言延展。</span>
+</div>
+
+```md
+請根據以下描述，生成高保真的 UI 介面設計：
+
+🗂 頁面：[頁面名稱，如 Dashboard]
+🎯 功能：[這個頁面的核心任務]
+👤 使用者情境：[目標用戶在什麼狀況下使用]
+📐 版面結構：[參考 designs/wireframes/ 中的描述]
+
+設計規格（來自 designs/DESIGN.md）：
+- 主色 / 背景色 / 強調色：[HEX]
+- 字體 / 圓角 / 設計語言：[填入]
+
+請生成完整頁面，包含所有互動元件，確保設計語言與 DESIGN.md 規格一致。
+```
+
+---
+layout: default
+transition: fade
+---
+
+# 設計風格取樣：Dribbble → DESIGN.md → Stitch
+
+<div class="grid grid-cols-3 gap-3 mt-3">
 
 <div class="text-center">
   <div class="rounded-xl p-4" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3)">
     <div class="text-3xl mb-2">🎨</div>
-    <div class="text-sm font-bold text-indigo-300">Step 1</div>
-    <div class="text-xs text-gray-400 mt-1">從 Dribbble 找靈感截圖</div>
+    <div class="text-sm font-bold text-indigo-300">Step A</div>
+    <div class="text-xs text-gray-400 mt-1">從 Dribbble 找靈感<br>截圖儲存</div>
   </div>
 </div>
 
 <div class="text-center">
   <div class="rounded-xl p-4" style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3)">
     <div class="text-3xl mb-2">🤖</div>
-    <div class="text-sm font-bold text-purple-300">Step 2</div>
-    <div class="text-xs text-gray-400 mt-1">AI 解析設計系統參數<br>存入 DESIGN.md</div>
+    <div class="text-sm font-bold text-purple-300">Step B</div>
+    <div class="text-xs text-gray-400 mt-1">AI 解析設計 Token<br>存至 designs/DESIGN.md</div>
   </div>
 </div>
 
 <div class="text-center">
   <div class="rounded-xl p-4" style="background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.3)">
     <div class="text-3xl mb-2">✨</div>
-    <div class="text-sm font-bold text-pink-300">Step 3</div>
-    <div class="text-xs text-gray-400 mt-1">以設計規格約束 Stitch<br>生成高保真頁面</div>
+    <div class="text-sm font-bold text-pink-300">Step C</div>
+    <div class="text-xs text-gray-400 mt-1">將 DESIGN.md 內容<br>附在 Stitch Prompt 中</div>
   </div>
 </div>
 
 </div>
 
 <v-click>
-<div class="mt-4">
 
 ```md
-請分析這張設計稿的設計系統，輸出以下參數：
-- 主色 / 輔助色 / 背景色（以 HEX 值標示）
+請分析這張設計稿的設計系統，輸出以下參數存至 designs/DESIGN.md：
+- 主色 / 輔助色 / 背景色（HEX）
 - 字體系統（標題字重、內文字重、字級比例）
-- 圓角大小（px）、間距系統（基礎單位）
-- 陰影風格
-- 整體設計語言關鍵字（如：minimalist, glassmorphism）
+- 圓角（px）、間距系統（基礎單位）、陰影風格
+- 設計語言關鍵字（minimalist / glassmorphism / neo-brutalism...）
 ```
 
-</div>
 </v-click>
+
+---
+layout: default
+transition: fade
+---
+
+# Step 4 — 補充 SPEC.md 元件拆解（Atomic Design）
+
+<div class="mb-3 text-sm text-gray-400">Wireframe 與設計稿完成後，讓 AI 補充前端元件規格，讓開發代理人有精確的拆分依據。</div>
+
+```md
+請你閱讀 designs/wireframes/ 和 designs/stitches/ 中的設計稿，
+補充 specs/SPEC.md 的前端元件規格章節。
+
+需補充的內容：
+1. Atoms（基本元件）：不可再分割的基礎 UI 元件列表
+2. Molecules（組合元件）：由 Atoms 組成的功能性元件
+3. Organisms（複合區塊）：由 Molecules 組成的頁面區塊
+4. Pages（頁面）：路由 + 對應的主要 Organisms
+5. 元件複用規則：哪些跨頁面共用？哪些是頁面專屬？
+
+請對應到 wireframes/ 中的實際頁面描述，讓每個元件都能追溯到具體的設計需求。
+```
 
 ---
 layout: section
@@ -672,62 +683,48 @@ transition: slide-left
 
 <div class="text-center">
   <div class="text-5xl mb-3">🔗</div>
-  <div class="text-xl text-emerald-400 font-semibold mb-1">第五階段</div>
-  <div class="text-4xl font-black text-gray-100">設計整合與導出</div>
+  <div class="text-xl text-emerald-400 font-semibold mb-1">第四階段</div>
+  <div class="text-4xl font-black text-gray-100">設計導出</div>
   <div class="text-lg text-gray-400 mt-3">選擇適合你的工作流程</div>
 </div>
 
 ---
-layout: two-cols
+layout: default
 transition: fade
 ---
 
-# 方案一：專業流程
+# 設計導出方案
 
-**Figma + MCP**
+<div class="grid grid-cols-2 gap-5 mt-4">
 
-適合：中大型專案、長期維護、設計師協作
-
-<div class="mt-3 space-y-2">
-<div class="p-2 rounded text-sm" style="background: rgba(16,185,129,0.1)">
-  ✅ Stitch 導出 → 匯入 Figma
-</div>
-<div class="p-2 rounded text-sm" style="background: rgba(16,185,129,0.1)">
-  ✅ 設定 Figma MCP Server
-</div>
-<div class="p-2 rounded text-sm" style="background: rgba(16,185,129,0.1)">
-  ✅ IDE 連接 MCP，AI 讀取設計數據
-</div>
-</div>
-
-<div class="mt-4 p-3 rounded-lg text-sm" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3)">
-  <div class="text-emerald-400 font-bold text-xs mb-1">MCP 核心優勢</div>
-  <div class="text-gray-300 text-xs">AI 精準抓取設計數據，而非猜測截圖。Code Connect 確保代碼使用已有設計系統元件。</div>
+<div class="rounded-xl p-4" style="background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.35)">
+  <div class="text-emerald-400 font-bold text-base mb-1">方案一：專業流程</div>
+  <div class="text-gray-400 text-xs mb-3">Figma + MCP｜中大型專案、長期維護</div>
+  <div class="space-y-2">
+    <div class="p-2 rounded text-sm" style="background: rgba(16,185,129,0.1)">✅ Stitch 導出 → 匯入 Figma</div>
+    <div class="p-2 rounded text-sm" style="background: rgba(16,185,129,0.1)">✅ 設定 Figma MCP Server</div>
+    <div class="p-2 rounded text-sm" style="background: rgba(16,185,129,0.1)">✅ IDE 連接 MCP，AI 讀取設計數據</div>
+  </div>
+  <div class="mt-3 p-2 rounded text-xs" style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3)">
+    <span class="text-emerald-400 font-bold">MCP 優勢：</span>
+    <span class="text-gray-300">AI 精準抓取設計數據，Code Connect 確保元件一致。</span>
+  </div>
 </div>
 
-::right::
-
-# 方案二：敏捷流程
-
-**直接打包**
-
-適合：小型專案、課堂練習、快速原型
-
-<div class="mt-3 space-y-2">
-<div class="p-2 rounded text-sm" style="background: rgba(99,102,241,0.1)">
-  ✅ Stitch Export → Download as HTML
-</div>
-<div class="p-2 rounded text-sm" style="background: rgba(99,102,241,0.1)">
-  ✅ 解壓縮 → <code>designs/stitches/</code>
-</div>
-<div class="p-2 rounded text-sm" style="background: rgba(99,102,241,0.1)">
-  ✅ 作為 AI 的視覺規格參考
-</div>
+<div class="rounded-xl p-4" style="background: rgba(99,102,241,0.07); border: 1px solid rgba(99,102,241,0.35)">
+  <div class="text-indigo-400 font-bold text-base mb-1">方案二：敏捷流程</div>
+  <div class="text-gray-400 text-xs mb-3">直接打包｜小型專案、課堂練習、快速原型</div>
+  <div class="space-y-2">
+    <div class="p-2 rounded text-sm" style="background: rgba(99,102,241,0.1)">✅ Stitch Export → Download as HTML</div>
+    <div class="p-2 rounded text-sm" style="background: rgba(99,102,241,0.1)">✅ 解壓縮 → <code>designs/stitches/</code></div>
+    <div class="p-2 rounded text-sm" style="background: rgba(99,102,241,0.1)">✅ 作為 AI 的視覺規格參考</div>
+  </div>
+  <div class="mt-3 p-2 rounded text-xs" style="background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3)">
+    <span class="text-indigo-400 font-bold">注意：</span>
+    <span class="text-gray-300">HTML/CSS 是視覺規格參考，AI 後續會重構為正式 React/Vue 元件。</span>
+  </div>
 </div>
 
-<div class="mt-4 p-3 rounded-lg text-sm" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3)">
-  <div class="text-indigo-400 font-bold text-xs mb-1">⚠️ 注意</div>
-  <div class="text-gray-300 text-xs">HTML/CSS 是<strong>視覺規格參考</strong>，非生產元件。AI 後續會重構為正式 React/Vue 元件。</div>
 </div>
 
 ---
@@ -737,9 +734,9 @@ transition: slide-left
 
 <div class="text-center">
   <div class="text-5xl mb-3">🤖</div>
-  <div class="text-xl text-blue-400 font-semibold mb-1">第六階段</div>
+  <div class="text-xl text-blue-400 font-semibold mb-1">第五階段</div>
   <div class="text-4xl font-black text-gray-100">AI 代理人開發實踐</div>
-  <div class="text-lg text-gray-400 mt-3">以規格與設計稿驅動 AI 完成實作</div>
+  <div class="text-lg text-gray-400 mt-3">三個階段，分批交付、分批驗收</div>
 </div>
 
 ---
@@ -747,24 +744,126 @@ layout: default
 transition: fade
 ---
 
-# 工具選型
+# 工具選擇
 
-<div class="mt-4">
+<div class="text-sm text-gray-400 mb-4">選哪個都 OK，核心理念相同：AI 讀取全局規格、分階段交付</div>
 
-| 功能 | Cursor (2026) | Google Antigravity (2026) |
-|------|:---:|:---:|
-| 核心技術 | VS Code Fork + Deep Indexing | Agent-first + Gemini 3 |
-| 特色模式 | Composer（多檔案編輯） | Plan Mode + Artifacts |
-| 異步處理 | 支援背景代理任務 | Manager 視圖監控多代理 |
-| 定價 | $20/月（Pro） | 預覽期免費（含額度） |
+<div class="grid grid-cols-4 gap-3">
+
+<div class="rounded-xl p-3 text-center" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3)">
+  <div class="h-8 mb-1 flex justify-center items-center">
+    <img src="https://www.cursor.com/assets/images/logo.svg" class="h-6" />
+  </div>
+  <div class="text-sm font-bold text-indigo-300">Cursor</div>
+  <div class="text-xs text-gray-500 mt-1">VS Code Fork<br>Deep Indexing</div>
+</div>
+
+<div class="rounded-xl p-3 text-center" style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3)">
+  <div class="h-8 mb-1 flex justify-center items-center">
+    <img src="https://antigravity.google/assets/image/brand/antigravity-icon__full-color.png" class="h-6" />
+  </div>
+  <div class="text-sm font-bold text-blue-300">AntiGravity</div>
+  <div class="text-xs text-gray-500 mt-1">Google Agent<br>Plan Mode</div>
+</div>
+
+<div class="rounded-xl p-3 text-center" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3)">
+  <div class="h-8 mb-1 flex justify-center items-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" class="h-6" />
+  </div>
+  <div class="text-sm font-bold text-emerald-300">VS Code</div>
+  <div class="text-xs text-gray-500 mt-1">Copilot / Cline<br>Extension</div>
+</div>
+
+<div class="rounded-xl p-3 text-center" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3)">
+  <div class="h-8 mb-1 flex justify-center items-center">
+    <img src="https://cdn.simpleicons.org/claude/D97757" class="h-6" />
+  </div>
+  <div class="text-sm font-bold text-amber-300">Claude Code</div>
+  <div class="text-xs text-gray-500 mt-1">Anthropic CLI<br>Terminal-first</div>
+</div>
+
+<div class="rounded-xl p-3 text-center" style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3)">
+  <div class="h-8 mb-1 flex justify-center items-center">
+    <img src="https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/codex-color.png" class="h-6" />
+  </div>
+  <div class="text-sm font-bold text-purple-300">Codex</div>
+  <div class="text-xs text-gray-500 mt-1">OpenAI<br>Web + API</div>
+</div>
+
+<div class="rounded-xl p-3 text-center" style="background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.3)">
+  <div class="h-8 mb-1 flex justify-center items-center">
+    <img src="https://opencode.ai/_build/assets/opencode-desktop-icon-OSkS5hfD.png" class="h-6" />
+  </div>
+  <div class="text-sm font-bold text-pink-300">OpenCode</div>
+  <div class="text-xs text-gray-500 mt-1">開源<br>Terminal</div>
+</div>
+
+<div class="rounded-xl p-3 text-center" style="background: rgba(20,184,166,0.1); border: 1px solid rgba(20,184,166,0.3)">
+  <div class="h-8 mb-1 flex justify-center items-center">
+    <img src="https://exafunction.github.io/public/brand/windsurf-black-symbol.svg" class="h-6" />
+  </div>
+  <div class="text-sm font-bold text-teal-300">Windsurf</div>
+  <div class="text-xs text-gray-500 mt-1">Codeium<br>Flow 模式</div>
+</div>
 
 </div>
 
+---
+layout: default
+transition: fade
+---
+
+# 開始前：先讓 AI 產出計畫
+
+<div class="mb-3 p-3 rounded-lg text-sm" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3)">
+  📌 在執行任何一個 Phase 之前，先讓 AI 閱讀全部文件、產出 <code>specs/tasks.md</code>，人工確認後再開始。
+</div>
+
+```md
+請你參考以下所有文件，在開始寫代碼之前，先輸出 specs/tasks.md 計畫：
+
+📁 specs/requirements.md — 產品需求與驗收標準
+📁 specs/SPEC.md — 技術規格（技術選型、API 設計、元件清單）
+📁 designs/DESIGN.md — 設計系統規格
+📁 designs/wireframes/ — 各頁面線框圖描述
+📁 designs/user-flow.md — 使用者操作流程
+📁 designs/stitches/ — 關鍵頁面視覺參考（HTML/CSS）
+
+tasks.md 需包含：各開發階段任務清單（前端 → 後端）、
+每個任務的預計產出與驗收標準、跨任務的依賴關係。
+
+等我確認 tasks.md 無誤後，再開始執行 Phase 1。
+```
+
+---
+layout: default
+transition: fade
+---
+
+# Phase 1 — 建立設計語言
+
+<div class="mb-3 text-gray-400 text-sm">以 Stitch 關鍵頁面為基準，建立設計系統與核心 UI</div>
+
+```md
+【Phase 1：建立設計語言與核心頁面】
+
+請閱讀以下文件，根據 designs/stitches/ 的關鍵頁面，完成前端基礎建設：
+
+📁 specs/SPEC.md — 前端元件清單（Atomic Design）
+📁 designs/DESIGN.md — 設計系統規格（色彩、字體、間距）
+📁 designs/stitches/ — 關鍵頁面視覺參考
+
+請完成：
+1. 設計系統基礎（色彩、字體、間距 CSS Token）
+2. Atoms 元件庫（Button、Input、Badge 等基礎元件）
+3. 以 stitches/ 的關鍵頁面為基準，完成最重要頁面的完整 UI 實作
+
+⏸ 完成後請告知，等待人工確認樣式與設計語言，再繼續 Phase 2。
+```
+
 <v-click>
-<div class="mt-5 p-4 rounded-xl text-center" style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(99,102,241,0.2)); border: 1px solid rgba(99,102,241,0.4)">
-  <div class="text-2xl mb-1">🎓</div>
-  <div class="text-blue-300 font-bold">課堂統一使用：Google Antigravity</div>
-  <div class="text-gray-400 text-sm mt-1">同學都有 Google 學生帳號 Pro 權限</div>
+<div class="mt-3 p-3 rounded-lg text-sm" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3)">
+  ✅ 人工介入點：確認樣式 → <strong>將設計語言固定下來</strong> → 進入 Phase 2
 </div>
 </v-click>
 
@@ -773,24 +872,26 @@ layout: default
 transition: fade
 ---
 
-# 步驟 6.2 — 終極 Prompt 範本
+# Phase 2 — 建立完整頁面
 
-```md {all|1-5|7-13|15-19}
-請你參考以下資料夾內的所有文件，協助打造這項產品：
+<div class="mb-3 text-gray-400 text-sm">設計語言確認後，依 Wireframe 建立所有其餘頁面</div>
 
-📁 specs/requirements.md — 產品需求與驗收標準
-📁 specs/SPEC.md — 技術規格，包含技術選型與 API 設計
-📁 designs/DESIGN.md — 設計系統（色彩、字體、間距規則）
-📁 designs/stitches/ — 代表性頁面的視覺參考（HTML/CSS）
-📁 designs/wireframes/ — 各頁面線框圖規格
+```md
+【Phase 2：建立完整前端頁面】
 
-請嚴格按照以下順序進行：
+設計語言已確認。請依照 designs/wireframes/ 的規格，
+使用已建立的元件庫與設計語言，完成所有其餘頁面：
 
-1. 先仔細閱讀所有文件，理解整體系統
-2. 規劃頁面清單、Component 設計、資料庫資料流安排
-3. 將規劃結果輸出為 specs/tasks.md，等待確認後再撰寫程式碼
-4. 確認後，依照 stitches/ 的代表性頁面建立設計語言，
-   其餘頁面參考 wireframes/ 的規格一起生成
+📁 designs/wireframes/ — 各頁面版面與功能描述
+📁 designs/user-flow.md — 頁面間的跳轉邏輯與路由設計
+📁 specs/SPEC.md — API 路由設計（用於配置頁面路由）
+
+建立規則：
+1. 所有元件優先從已建立的元件庫中取用
+2. 若需新元件，請先告知後再建立
+3. 每完成一個主要頁面，請告知進度
+
+⏸ 完成後請告知，等待確認介面與功能無誤後，再繼續 Phase 3。
 ```
 
 ---
@@ -798,26 +899,60 @@ layout: default
 transition: fade
 ---
 
-# 步驟 6.3 & 6.4 — 確認計畫 + 安全性
+# Phase 3 — 建立後端與資料層
+
+<div class="mb-3 text-gray-400 text-sm">前端介面確認後，依序建立資料模型、後端服務元件，最後將 API 與前端串接起來</div>
+
+```md
+【Phase 3：建立後端、資料層與 API 串接】
+
+前端介面已確認。請依以下順序開發後端：
+
+📁 specs/SPEC.md — API 路由設計、資料庫 Schema、元件清單
+📁 specs/AGENTS.md — 操作權限規則（最小權限原則）
+
+【3-A】資料模型建立
+- 依 SPEC.md 的 Schema 草稿，建立完整的資料庫 Schema
+- 每張資料表需包含：欄位定義、型別、索引、關聯關係
+- 建立對應的 TypeScript / 語言 型別定義（types/models）
+
+【3-B】後端 Service 元件
+- 為每個業務模塊建立獨立的 Service 層（AuthService、UserService...）
+- 每個 Service 負責：資料庫操作 + 商業邏輯 + 錯誤處理
+- 遵守 AGENTS.md 的最小權限原則
+
+【3-C】API 路由與前端串接
+- 依 SPEC.md 的 API 路由設計，逐一實作並串接前端
+- 每條路由完成後，確認前端對應頁面資料正確顯示
+
+⏸ 每個子階段（3-A / 3-B / 3-C）完成後請告知，等待驗收確認後再繼續。
+```
+
+---
+layout: default
+transition: fade
+---
+
+# 人工審查 + AGENTS.md 安全規則
 
 <div class="grid grid-cols-2 gap-5 mt-3">
 
 <div>
-<div class="text-sm font-bold text-blue-400 mb-2">✅ 人工審查清單</div>
+<div class="text-sm font-bold text-blue-400 mb-2">✅ 每個 Phase 的審查重點</div>
 
 <v-clicks>
 
 <div class="text-sm p-2 rounded mb-2" style="background: rgba(59,130,246,0.1)">
-  確認任務順序是否合理
+  Phase 1：樣式 / 設計語言是否符合預期？
 </div>
 <div class="text-sm p-2 rounded mb-2" style="background: rgba(59,130,246,0.1)">
-  確認沒有遺漏的功能點
+  Phase 2：頁面功能 / 跳轉邏輯是否正確？
 </div>
 <div class="text-sm p-2 rounded mb-2" style="background: rgba(59,130,246,0.1)">
-  確認技術選型與 SPEC.md 一致
+  Phase 3：API 串接 / 資料讀寫是否正常？
 </div>
 <div class="text-sm p-2 rounded" style="background: rgba(59,130,246,0.1)">
-  如有問題，直接在對話中批注修正
+  全程：技術選型是否與 SPEC.md 一致？
 </div>
 
 </v-clicks>
@@ -865,34 +1000,44 @@ transition: fade
 
 # 文件命名規則
 
-<div class="mt-4">
+<div class="mt-4 text-sm">
 
 | 文件 | 路徑 | 說明 |
 |------|------|------|
 | 需求文件 | `specs/requirements.md` | 定義「做什麼」與驗收標準 |
-| 技術規格 | `specs/SPEC.md` | 技術選型、API 設計、資料模型 |
+| 技術規格 | `specs/SPEC.md` | 技術選型、API 設計、元件清單 |
 | 代理人規範 | `specs/AGENTS.md` | 代理人角色指令與行為約束 |
 | 任務清單 | `specs/tasks.md` | AI 生成的任務規劃（待人工確認） |
 | 設計系統 | `designs/DESIGN.md` | 色彩、字體、間距、元件規則 |
+| 線框圖 | `designs/wireframes/` | 各頁面版面與元件描述（每頁一檔） |
+| 操作流程 | `designs/user-flow.md` | 使用者操作流程與頁面跳轉邏輯 |
 
 </div>
 
-<v-click>
-<div class="mt-5">
+---
+layout: default
+transition: fade
+---
 
-### `requirements.md` P0 / P1 / P2 優先級結構
+# `requirements.md` 優先級結構
+
+<div class="mb-4 text-sm text-gray-400">用 P0 / P1 / P2 區分功能優先級，讓 AI 知道什麼必須做、什麼可以之後再說。</div>
 
 ```md
 ### 🔴 P0 — 必須有（MVP）
-- [ ] 功能一：[說明] | 驗收標準：[如何確認完成]
+- [ ] 功能名稱：[說明這個功能解決什麼問題]
+      驗收標準：[如何確認這個功能完成了？]
 
-### 🟡 P1 — 應該有
-- [ ] 功能三：[說明]
+### 🟡 P1 — 應該有（重要但非核心）
+- [ ] 功能名稱：[說明]
 
 ### 🟢 P2 — 有更好（未來規劃）
-- [ ] 功能四：[說明]
+- [ ] 功能名稱：[說明]
 ```
 
+<v-click>
+<div class="mt-4 p-3 rounded-lg text-sm" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3)">
+  💡 驗收標準是最重要的部分：讓 AI 知道「什麼叫做完成」，才能自我驗證輸出是否達標。
 </div>
 </v-click>
 
@@ -906,33 +1051,36 @@ transition: fade
 <div class="grid grid-cols-3 gap-3 mt-3 text-xs">
 
 <div class="rounded-xl p-3" style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3)">
-  <div class="text-purple-400 font-bold mb-2 text-sm">階段 1–2</div>
+  <div class="text-purple-400 font-bold mb-2 text-sm">準備 + 階段 1–2</div>
   <div class="space-y-1 text-gray-300">
+    <div>☐ 資料夾結構已建立</div>
     <div>☐ requirements.md 存在</div>
     <div>☐ 功能按優先級排序</div>
-    <div>☐ 邊界情況已定義</div>
     <div>☐ 技術選型已確認</div>
-    <div>☐ SPEC.md 含 API 設計</div>
+    <div>☐ SPEC.md 含架構 + API 設計</div>
   </div>
 </div>
 
-<div class="rounded-xl p-3" style="background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.3)">
-  <div class="text-pink-400 font-bold mb-2 text-sm">階段 3–4</div>
+<div class="rounded-xl p-3" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3)">
+  <div class="text-amber-400 font-bold mb-2 text-sm">階段 3–4</div>
   <div class="space-y-1 text-gray-300">
-    <div>☐ 系統架構圖已產生</div>
-    <div>☐ 元件按原子設計拆分</div>
-    <div>☐ 至少 1 個設計稿</div>
-    <div>☐ DESIGN.md 含設計系統</div>
+    <div>☐ wireframes/ 各頁面描述完成</div>
+    <div>☐ user-flow.md 完成</div>
+    <div>☐ 關鍵頁面設計稿已生成</div>
+    <div>☐ DESIGN.md 含設計 Token</div>
+    <div>☐ SPEC.md 含 Atomic Design</div>
+    <div>☐ stitches/ 或 Figma 就緒</div>
   </div>
 </div>
 
 <div class="rounded-xl p-3" style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3)">
-  <div class="text-blue-400 font-bold mb-2 text-sm">階段 5–6</div>
+  <div class="text-blue-400 font-bold mb-2 text-sm">階段 5</div>
   <div class="space-y-1 text-gray-300">
-    <div>☐ 設計稿已導出</div>
-    <div>☐ stitches/ 或 Figma 就緒</div>
     <div>☐ tasks.md 已人工確認</div>
-    <div>☐ AI 代理人開始執行</div>
+    <div>☐ Phase 1：設計語言確認</div>
+    <div>☐ Phase 2：所有頁面完成</div>
+    <div>☐ Phase 3：資料層串接完成</div>
+    <div>☐ AGENTS.md 安全規則已設定</div>
   </div>
 </div>
 
