@@ -12,6 +12,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--", "--deck=校園媽媽咪呀"],
       "port": 3030
+    },
+    {
+      "name": "campus-mamma-mia-zh",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--deck=校園媽媽咪呀（繁中）"],
+      "port": 3030
     }
   ]
 }
