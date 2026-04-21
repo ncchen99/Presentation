@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--", "vibe-coding-2026"],
       "port": 3030
+    },
+    {
+      "name": "campus-mamma-mia",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--deck=校園媽媽咪呀"],
+      "port": 3030
     }
   ]
 }
