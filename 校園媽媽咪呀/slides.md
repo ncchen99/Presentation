@@ -35,12 +35,8 @@ fonts:
 </div>
 
 ---
-layout: image
-image: /assets/2.webp
-backgroundSize: cover
-backgroundPosition: bottom center
----
 
+<img src="/assets/2.webp" class="absolute inset-0 w-full h-full" style="object-fit: cover; object-position: bottom center;" />
 <div class="absolute top-8 right-8 text-right" style="max-width: 300px;">
   <div class="px-5 py-4 rounded-2xl" style="background: rgba(0,0,0,0.58); backdrop-filter: blur(6px);">
     <div class="text-2xl font-black text-white mb-3">Disaster Strikes! 😱</div>
