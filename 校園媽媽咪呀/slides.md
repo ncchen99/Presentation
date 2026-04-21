@@ -35,17 +35,19 @@ fonts:
 </div>
 
 ---
+layout: image
+image: /assets/2.webp
+backgroundSize: cover
+backgroundPosition: bottom center
+---
 
-<div class="h-full flex items-center gap-8 px-10 py-6">
-  <img src="/assets/2.webp" class="flex-shrink-0 rounded-2xl shadow-2xl" style="width: 45%; aspect-ratio: 1/1; object-fit: cover; object-position: center;" />
-  <div class="flex-1">
-    <div class="text-4xl font-black mb-6" style="color: #1d4ed8;">Disaster Strikes! 😱</div>
-    <div class="text-2xl leading-loose" style="color: #374151;">
+<div class="absolute top-8 right-8 text-right" style="max-width: 300px;">
+  <div class="px-5 py-4 rounded-2xl" style="background: rgba(0,0,0,0.58); backdrop-filter: blur(6px);">
+    <div class="text-2xl font-black text-white mb-3">Disaster Strikes! 😱</div>
+    <div class="text-base text-gray-200" style="line-height: 1.9;">
       No Wi-Fi anywhere in the school!
-      <br/><br/>
-      Students are in total chaos and panic...
-      <br/><br/>
-      Who will save us from this nightmare?! 🆘
+      <br/>Students are in total chaos...
+      <br/>Who will save us?! 🆘
     </div>
   </div>
 </div>
@@ -67,13 +69,13 @@ fonts:
 
 ---
 
-<div class="h-full flex items-center gap-6 px-10 py-6">
-  <div class="flex-shrink-0 flex gap-3" style="width: 45%;">
-    <img src="/assets/3-1.webp" class="rounded-2xl shadow-xl" style="width: 50%; aspect-ratio: 1/1; object-fit: cover;" />
-    <img src="/assets/3-2.webp" class="rounded-2xl shadow-xl" style="width: 50%; aspect-ratio: 1/1; object-fit: cover;" />
+<div class="h-full flex items-stretch gap-6 px-8 py-6">
+  <div class="flex gap-3 flex-shrink-0" style="width: 52%;">
+    <img src="/assets/3-1.webp" class="rounded-2xl shadow-xl" style="width: calc(50% - 6px); object-fit: cover;" />
+    <img src="/assets/3-2.webp" class="rounded-2xl shadow-xl" style="width: calc(50% - 6px); object-fit: cover;" />
   </div>
-  <div class="flex-1">
-    <div class="text-3xl font-black mb-4" style="color: #92400e;">Cappuccino Assassino 🥷☕</div>
+  <div class="flex flex-col justify-center flex-1">
+    <div class="text-2xl font-black mb-5" style="color: #92400e;">Cappuccino Assassino 🥷☕</div>
     <div class="text-xl leading-loose" style="color: #374151;">
       A legendary ninja powerful enough
       <br/>to stop the Burger King...
