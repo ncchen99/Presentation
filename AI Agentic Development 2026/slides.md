@@ -251,6 +251,23 @@ transition: slide-left
   <div class="text-lg text-gray-400 mt-3">上下文工程（Context Engineering）的基礎</div>
 </div>
 
+
+---
+layout: center
+class: text-center
+---
+
+# 📖 完整實戰操作手冊
+
+本簡報內容已整理成完整的 GitHub 文件，歡迎直接參考：
+
+<div class="mt-10">
+  <a href="https://github.com/ncchen99/Vibe-Coding-Guide-2026" target="_blank" class="px-8 py-4 rounded-xl bg-purple-600 text-white font-bold text-2xl hover:bg-purple-700 transition-colors no-underline">
+    GitHub 實戰指南：Vibe-Coding-Guide-2026
+  </a>
+</div>
+
+
 ---
 layout: default
 transition: fade
