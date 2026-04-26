@@ -241,18 +241,6 @@ transition: slide-up
 </div>
 
 ---
-layout: section
-transition: slide-left
----
-
-<div class="text-center">
-  <div class="text-6xl mb-4">📁</div>
-  <div class="text-4xl font-black text-indigo-400">專案資料夾結構規範</div>
-  <div class="text-lg text-gray-400 mt-3">上下文工程（Context Engineering）的基礎</div>
-</div>
-
-
----
 layout: center
 class: text-center
 ---
@@ -266,6 +254,20 @@ class: text-center
     GitHub 實戰指南：Vibe-Coding-Guide-2026
   </a>
 </div>
+
+---
+layout: section
+transition: slide-left
+---
+
+<div class="text-center">
+  <div class="text-6xl mb-4">📁</div>
+  <div class="text-4xl font-black text-indigo-400">專案資料夾結構規範</div>
+  <div class="text-lg text-gray-400 mt-3">上下文工程（Context Engineering）的基礎</div>
+</div>
+
+
+
 
 
 ---
