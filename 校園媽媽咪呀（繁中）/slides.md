@@ -167,7 +167,6 @@ fonts:
         打倒漢堡魔王，奪回學校的 <strong>Wi-Fi</strong>！ 📶🏆
       </div>
     </div>
-    
     <div class="flex items-center gap-5 p-4 rounded-2xl bg-amber-50 border border-amber-200 shadow-sm">
       <img src="/assets/gmae url.png" class="w-24 h-24 rounded-xl border-2 border-amber-300 shadow-sm" />
       <div>
