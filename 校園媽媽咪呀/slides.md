@@ -159,17 +159,30 @@ fonts:
 ---
 
 <div class="h-full flex items-center gap-8 px-10 py-6">
-  <img src="/assets/8.webp" class="flex-shrink-0 rounded-2xl shadow-2xl" style="width: 45%; aspect-ratio: 1/1; object-fit: cover;" />
-  <div class="flex-1">
-    <div class="text-4xl font-black mb-6" style="color: #b91c1c;">Your Mission Now! 🦈💥</div>
-    <div class="text-2xl leading-loose" style="color: #374151;">
-      Only <strong>YOU</strong> can save the day!
-      <br/><br/>
-      Help all <strong>seven agents</strong> unite
-      <br/>together...
-      <br/><br/>
-      Defeat the Burger King and reclaim
-      <br/>the <strong>Wi-Fi</strong> for the school! 📶🏆
+  <img src="/assets/8.webp" class="flex-shrink-0 rounded-2xl shadow-2xl" style="width: 40%; aspect-ratio: 1/1; object-fit: cover;" />
+  <div class="flex-1 flex flex-col justify-center gap-6">
+    <div>
+      <div class="text-4xl font-black mb-4" style="color: #b91c1c;">Your Mission Now! 🦈💥</div>
+      <div class="text-2xl leading-loose" style="color: #374151;">
+        Only <strong>YOU</strong> can save the day!
+        <br/><br/>
+        Help all <strong>seven agents</strong> unite together...
+        <br/><br/>
+        Defeat the Burger King and reclaim the <strong>Wi-Fi</strong>! 📶🏆
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-5 p-4 rounded-2xl bg-amber-50 border border-amber-200 shadow-sm">
+      <img src="/assets/gmae url.png" class="w-24 h-24 rounded-xl border-2 border-amber-300 shadow-sm" />
+      <div>
+        <div class="text-xl font-black text-amber-900 mb-1">🎮 Scan to Play!</div>
+        <div class="text-sm text-amber-800 leading-relaxed">
+          Scan the QR Code with your phone or tablet
+          <br/>
+          to start the rescue mission with the agents!
+        </div>
+      </div>
     </div>
   </div>
 </div>
+

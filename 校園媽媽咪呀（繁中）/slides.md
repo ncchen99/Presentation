@@ -155,16 +155,30 @@ fonts:
 ---
 
 <div class="h-full flex items-center gap-8 px-10 py-6">
-  <img src="/assets/8.webp" class="flex-shrink-0 rounded-2xl shadow-2xl" style="width: 45%; aspect-ratio: 1/1; object-fit: cover;" />
-  <div class="flex-1">
-    <div class="text-4xl font-black mb-6" style="color: #b91c1c;">你們的任務！ 🦈💥</div>
-    <div class="text-2xl leading-loose" style="color: #374151;">
-      只有<strong>你們</strong>能拯救這一切！
-      <br/><br/>
-      幫助<strong>七位特務</strong>團結起來...
-      <br/><br/>
-      打倒漢堡魔王，
-      <br/>奪回學校的 <strong>Wi-Fi</strong>！ 📶🏆
+  <img src="/assets/8.webp" class="flex-shrink-0 rounded-2xl shadow-2xl" style="width: 40%; aspect-ratio: 1/1; object-fit: cover;" />
+  <div class="flex-1 flex flex-col justify-center gap-6">
+    <div>
+      <div class="text-4xl font-black mb-4" style="color: #b91c1c;">你們的任務！ 🦈💥</div>
+      <div class="text-2xl leading-loose" style="color: #374151;">
+        只有<strong>你們</strong>能拯救這一切！
+        <br/><br/>
+        幫助<strong>七位特務</strong>團結起來...
+        <br/><br/>
+        打倒漢堡魔王，奪回學校的 <strong>Wi-Fi</strong>！ 📶🏆
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-5 p-4 rounded-2xl bg-amber-50 border border-amber-200 shadow-sm">
+      <img src="/assets/gmae url.png" class="w-24 h-24 rounded-xl border-2 border-amber-300 shadow-sm" />
+      <div>
+        <div class="text-xl font-black text-amber-900 mb-1">🎮 掃碼進入遊戲！</div>
+        <div class="text-sm text-amber-800 leading-relaxed">
+          拿出手機或平板掃描 QR Code，
+          <br/>
+          立刻與英雄特務們展開救援行動！
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
